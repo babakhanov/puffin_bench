@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 
 <?php 
-
-    function shellsSort(& $arr) {
-        $n    = count($arr);
+    
+    function shellsSort() {
+        $n    = count($GLOBALS["a"]);
         $gap  = intval($n/2);
         $i    = 0;
         $j    = 0;
@@ -12,13 +12,13 @@
         while ($gap > 0) {
             $i = $gap;
             while ($i < $n) {
-                $temp = $arr[$i];
+                $temp = $GLOBALS["a"][$i];
                 $j = $i;
-                while ($j >= $gap && $arr[$j - $gap] > $temp) {
-                    $arr[$j] = $arr[$j - $gap];
+                while ($j >= $gap && $GLOBALS["a"][$j - $gap] > $temp) {
+                    $GLOBALS["a"][$j] = $GLOBALS["a"][$j - $gap];
                     $j = $j - $gap;
                 }
-                $arr[$j] = $temp;
+                $GLOBALS["a"][$j] = $temp;
                 $i = $i + 1;
             }
             $gap = intval($gap/2);
@@ -34,7 +34,7 @@
         $c = $c + 1;
     }
 
-    echo "PHP\n";
+    echo "PHP global array\n";
 
 
 

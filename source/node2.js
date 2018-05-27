@@ -2,7 +2,7 @@
 
 var cmd=require('node-cmd');
 
-function shellsSort(arr) {
+function shellsSort() {
     let n    = arr.length
     let gap  = Math.floor(n/2)
     let i    = 0
@@ -25,13 +25,12 @@ function shellsSort(arr) {
     }
 }
 
-var a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+var arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
 var c = 0;
 
 while (c < 100000000) {
-	// a = a.sort();
-    shellsSort(a);
-    a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+    shellsSort();
+    arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
     c = c + 1
 }
 

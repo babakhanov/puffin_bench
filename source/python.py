@@ -1,35 +1,31 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env python
 
-def shellsSort(arr)
-	n = arr.count
-    gap = n/2
-    i  = 0
-    j  = 0
-    temp = nil
+def shellsSort(arr):
+    n    = len(arr)
+    gap  = n/2
+    i    = 0
+    j    = 0
+    temp = None
     
-    while gap > 0 do
+    while (gap > 0):
         i = gap
-        while i < n do
+        while (i < n):
             temp = arr[i]
             j = i
-            while (j >= gap && arr[j - gap] > temp) do
+            while (j >= gap and arr[j - gap] > temp):
                 arr[j] = arr[j - gap]
                 j = j - gap
-            end
             arr[j] = temp
             i = i + 1
-        end
         gap = gap/2
-    end	
-end
+    
 
 a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 c = 0
 
-while (c < 100000000) do
+while (c < 100000000):
     shellsSort(a)
     a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
     c = c + 1
-end
 
-p "Ruby #{`ruby -v`}\n"
+print("Python\n")
